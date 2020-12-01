@@ -4,36 +4,53 @@ class Notification {
 		
 	public static void main(String [] args) {
 		Scanner in = new Scanner(System.in); 
-		/* Create an array of Contact that has a size of 4*/
-		Contact[] contact = new Contact[4];
-		Contact contact1 = new Contact();
-		Contact contact2 = new Contact();
+		Contact contact1 = new Contact("Daniel", "Mejia" ,"915-123-4567", "So, What is your favorite Disney Charecter?");
+		Contact contact2 = new Contact("Ali", "Nouri", "915-891-0111", "Are you going to be eating frozen pizza again tonight?");
 		Contact contact3 = new Contact();
 		Contact contact4 = new Contact();
-		Message contact1M = new Message();
-		Message contact2M = new Message();
+		Message contact1M = new Message("11-19","07:10", "PM" );
+		Message contact2M = new Message("11-20","12:30","PM");
 		Message contact3M = new Message();
 		Message contact4M = new Message();
+		System.out.println("Please enter contacts  First name");
+		contact3.setFirstName(in.next());
+		System.out.println("Please enter contacts Last name");
+		contact3.setLastName(in.next());
+		System.out.println("Please enter the contacts Phone number");
+		contact3.setNumber(in.next());
+		System.out.println("Please enter the date of the message [MM/DD]");
+		contact3M.setDay(in.next());
+		System.out.println("Please enter the time [XX:XX]");
+		contact3M.setTime(in.next());
+		System.out.println("Please enter the time of day AM or PM");
+		contact3M.setIsAm(in.next());
+		System.out.println("What does the message contain?");
+		contact3.setMessage(in.next());
+		System.out.println("Creating new contact");
+		System.out.println("Please enter contacts  First name");
+		contact4.setFirstName(in.next());
+		System.out.println("Please enter contacts Last name");
+		contact4.setLastName(in.next());
+		System.out.println("Please enter the contacts Phone number");
+		contact4.setNumber(in.next());
+		System.out.println("Please enter the date of the message [MM/DD]");
+		contact4M.setDay(in.next());
+		System.out.println("Please enter the time [XX:XX]");
+		contact4M.setTime(in.next());
+		System.out.println("Please enter the time of day AM or PM");
+		contact4M.setIsAm(in.next());
+		System.out.println("What does the message contain?");
+		contact4.setMessage(in.next());
 
-		/* Create a variable that will control when to end the 
-		   loop (to reshow the menu if the user wants to view
-		   another message) or stop it otherwise
-		*/
 		int numOfTry = 1;
 		
-		/* A variable that will hold the menu choice of the user */
 		int contactNumber = 0;
 		
-		/* Variables that will display phone number IF the user 
-		   wants to view it and a variable that will let you know
-		   if the user wants to repeat or not */ 
 		   String userInput = "a";
-		/* Fill the Contacts in the array */
 		System.out.println("Please enther your name");
-		String userName = in.nextLine();
-		System.out.println(fillContacts());
-		/* Welcome the user */
-		System.out.println("Hello <users_name_here>, welcome to iMessage!\n\n");
+		String userName = in.next();
+
+		System.out.println("Hello" + userName + ", welcome to iMessage!\n\n");
 		
 		
 		/* You will create a loop: while/doWhile
@@ -56,15 +73,13 @@ class Notification {
 		contactNumber = in.nextInt();
 		System.out.println(showMessageInfo(contactNumber));
 		System.out.println("Would you like to view aother message? [y] Yes, [n] No");
-		userInput = in.nextLine();
+		userInput = in.next();
 		if (userInput == "n"){
 			numOfTry --;
 			System.out.println("Thanks for using IMessage. Have a great day.");
 		}
 	}
-		
-		/* Display a message that lets the user know
-		   they successfully left the iMessage application*/
+
 		
 	}//end main
 	
@@ -82,28 +97,30 @@ class Notification {
 		Message contact4M = new Message();
 		if (contactNumber == 1 ){
 			System.out.println("Message from:" + contact1.getFirstName());
-			System.out.println(contact1M.getDay() + " " + contact1M.getTimeHou() + ":" + contact1M.getTimeMin());
+			System.out.println(contact1M.getDay() + " " + contact1M.getTime());
 			contact1M.getMessage();
 			System.out.println("Would you like to view the phone number? [y] Yes, [n] No");
-			userInput = in.nextLine();
+			userInput = in.next();
 			if (userInput == "y"){
 				System.out.println(showPhoneNumber(contactNumber));
 			}
 		}
 		if (contactNumber == 2 ){
 			System.out.println("Message from:" + contact2.getFirstName());
-			System.out.println(contact2M.getDay() + " " + contact2M.getTimeHou() + ":" + contact2M.getTimeMin());
+			System.out.println(contact2M.getDay() + " "+ contact2M.getTime());
 			System.out.println(contact2M.getMessage());
 			System.out.println("Would you like to view the phone number? [y] Yes, [n] No");
+			userInput = in.next();
 			if (userInput == "y"){
 				System.out.println(showPhoneNumber(contactNumber));
 			}
 		}
 		if (contactNumber == 3 ){
 			System.out.println("Message from:" + contact3.getFirstName());
-			System.out.println(contact3M.getDay() + " " + contact3M.getTimeHou() + ":" + contact3M.getTimeMin());
+			System.out.println(contact3M.getDay() + " " +contact3M.getTime());
 			System.out.println(contact3M.getMessage());
 			System.out.println("Would you like to view the phone number? [y] Yes, [n] No");
+			userInput = in.next();
 			if (userInput == "y"){
 				System.out.println(showPhoneNumber(contactNumber));
 			}else{
@@ -112,9 +129,10 @@ class Notification {
 		}
 		if (contactNumber == 4){
 			System.out.println("Message from:" + contact4.getFirstName());
-			System.out.println(contact4M.getDay() + " " + contact4M.getTimeHou() + ":" + contact4M.getTimeMin());
+			System.out.println(contact4M.getDay() + " " + contact4M.getTime());
 			System.out.println(contact4M.getMessage());
 			System.out.println("Would you like to view the phone number? [y] Yes, [n] No");
+			userInput = in.next();
 			if (userInput == "y"){
 				System.out.println(showPhoneNumber(contactNumber));
 			}
@@ -143,74 +161,8 @@ class Notification {
 		if (contactNumber == 4){
 			System.out.println(contact4.getNumber());
 		}
-	}
-	
-	/* The method, displayMenu, displays all the contact objects in a menu format that helps the user 
-	   choose easily
-    */
-	public static int displayMenu(int contactNumber){
-		Scanner in = new Scanner(System.in);
-		int Choice = in.nextInt();
-			switch (Choice) {
-				case 1:
-				
-				break;
-				
-				case 2:
-				
-				break;
-				
-				case 3:
-				
-				break;
-				
-				case 4:
-				
-				break;
-		}
-	}
-	
-	/* The method, fillContacts, will fill the Contact ARRAY in the main menu with the contact list provided to students.
-	   > Two contacts should be created using the no-argument constructor
-	   > Two contacts should be created using the setter methods to set the fields
-	*/
-	public static String fillContacts(){
-		String timeOfDay = "a";
-		Contact contact1 = new Contact();
-		Contact contact2 = new Contact();
-		Contact contact3 = new Contact();
-		Contact contact4 = new Contact();
-		Message contact1M = new Message();
-		Message contact2M = new Message();
-		Message contact3M = new Message();
-		Message contact4M = new Message();
-		Scanner in = new Scanner (System.in);
-		System.out.println("Please enter contacts  First name");
-		contact1.setFirstName(in.nextLine());
-		System.out.println("Please enter contacts Last name");
-		contact1.setLastName(in.nextLine());
-		System.out.println("Please enter the contacts Phone number");
-		contact1.setNumber(in.nextInt());
-		System.out.println("Please enter the date of the message");
-		System.out.println("Month:");
-		contact1.setMonth(in.nextInt());
-		System.out.println("Day:");
-		contact1.setDay(in.nextInt());
-		System.out.println("Please enter the time in hours");
-		contact1.setTimeHou(in.nextInt());
-		System.out.println("Please enter time in minutes");
-		contact1.setTimeMin(in.nextInt());
-		System.out.println("Please enter the time of day AM or PM");
-		timeOfDay = in.nextLine();
-		if (timeOfDay == "AM"){
-			contact1.setIsAm(true);
-		}else{
-			contact1.setIsAm(false);
-		}
-		System.out.println("What does the message contain?");
-		contact1.setMessage(in.nextLine());
-		System.out.println("Creating new contact");
 		
 	}
+		
 	
 }//end Notification class
