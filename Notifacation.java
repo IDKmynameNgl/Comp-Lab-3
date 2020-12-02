@@ -71,7 +71,7 @@ class Notification {
 		System.out.println("3." + contact3.getFirstName());
 		System.out.println("4." + contact4.getFirstName());
 		contactNumber = in.nextInt();
-		showMessageInfo(contactNumber, contact1, message1, contact2, message2, contact3, message3, contact4, message4);
+		showMessageInfo(contactNumber, contact1, contact2,  contact3, contact4, message1, message2, message3 message4);
 		System.out.println("Would you like to view aother message? [y] Yes, [n] No");
 		userInput = in.next();
 		if (userInput == "n"){
