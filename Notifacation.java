@@ -84,8 +84,9 @@ class Notification {
 	}//end main
 	
 	/* The method, showMessageInfo, returns the message of the specific Contact the user chose. */
-	public static String  showMessageInfo (int contactNumber){
+	public static void  showMessageInfo (int contactNumber){
 		Scanner in = new Scanner(System.in);
+		String s = "s";
 		String userInput = "a";
 		Contact contact1 = new Contact();
 		Contact contact2 = new Contact();
@@ -104,6 +105,7 @@ class Notification {
 			if (userInput == "y"){
 				System.out.println(showPhoneNumber(contactNumber));
 			}
+			 
 		}
 		if (contactNumber == 2 ){
 			System.out.println("Message from:" + contact2.getFirstName());
@@ -140,7 +142,8 @@ class Notification {
 	}
 	
 	/* The method, showPhoneNumber, returns phone number of the specific Contact the user chose. */
-	public static int showPhoneNumber(int contactNumber){
+	public static String showPhoneNumber(int contactNumber){
+		String s = "s";
 		Contact contact1 = new Contact();
 		Contact contact2 = new Contact();
 		Contact contact3 = new Contact();
@@ -151,18 +154,22 @@ class Notification {
 		Message contact4M = new Message();
 		if (contactNumber == 1 ){
 			System.out.println(contact1.getNumber());
+			s = contact1.getNumber();
 		}
 		if (contactNumber == 2 ){
 			System.out.println(contact2.getNumber());
+			s = contact2.getNumber();
 		}
 		if (contactNumber == 3 ){
 			System.out.println(contact3.getNumber());
+			s = contact3.getNumber();
 		}
 		if (contactNumber == 4){
 			System.out.println(contact4.getNumber());
+			s = contact4.getNumber();
 		}
-		
+		return s;
 	}
-		
+	
 	
 }//end Notification class
