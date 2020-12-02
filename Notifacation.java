@@ -8,10 +8,10 @@ class Notification {
 		Contact contact2 = new Contact("Ali", "Nouri", "915-891-0111", "Are you going to be eating frozen pizza again tonight?");
 		Contact contact3 = new Contact();
 		Contact contact4 = new Contact();
-		Message contact1M = new Message("11-19","07:10", "PM" );
-		Message contact2M = new Message("11-20","12:30","PM");
-		Message contact3M = new Message();
-		Message contact4M = new Message();
+		Message message1 = new Message("11-19","07:10", "PM" );
+		Message message2 = new Message("11-20","12:30","PM");
+		Message message3 = new Message();
+		Message message4 = new Message();
 		System.out.println("Please enter contacts  First name");
 		contact3.setFirstName(in.next());
 		System.out.println("Please enter contacts Last name");
@@ -19,11 +19,11 @@ class Notification {
 		System.out.println("Please enter the contacts Phone number");
 		contact3.setNumber(in.next());
 		System.out.println("Please enter the date of the message [MM/DD]");
-		contact3M.setDay(in.next());
+		message3.setDay(in.next());
 		System.out.println("Please enter the time [XX:XX]");
-		contact3M.setTime(in.next());
+		message3.setTime(in.next());
 		System.out.println("Please enter the time of day AM or PM");
-		contact3M.setIsAm(in.next());
+		message3.setIsAm(in.next());
 		System.out.println("What does the message contain?");
 		contact3.setMessage(in.next());
 		System.out.println("Creating new contact");
@@ -34,11 +34,11 @@ class Notification {
 		System.out.println("Please enter the contacts Phone number");
 		contact4.setNumber(in.next());
 		System.out.println("Please enter the date of the message [MM/DD]");
-		contact4M.setDay(in.next());
+		message4.setDay(in.next());
 		System.out.println("Please enter the time [XX:XX]");
-		contact4M.setTime(in.next());
+		message4.setTime(in.next());
 		System.out.println("Please enter the time of day AM or PM");
-		contact4M.setIsAm(in.next());
+		message4.setIsAm(in.next());
 		System.out.println("What does the message contain?");
 		contact4.setMessage(in.next());
 
@@ -71,7 +71,7 @@ class Notification {
 		System.out.println("3." + contact3.getFirstName());
 		System.out.println("4." + contact4.getFirstName());
 		contactNumber = in.nextInt();
-		System.out.println(showMessageInfo(contactNumber));
+		showMessageInfo(contactNumber, contact1, message1, contact2, message2, contact3, message3, contact4, message4);
 		System.out.println("Would you like to view aother message? [y] Yes, [n] No");
 		userInput = in.next();
 		if (userInput == "n"){
@@ -84,22 +84,14 @@ class Notification {
 	}//end main
 	
 	/* The method, showMessageInfo, returns the message of the specific Contact the user chose. */
-	public static void  showMessageInfo (int contactNumber){
+	public static void  showMessageInfo (int contactNumber, Contact contact1, Contact contact2, Contact contact3, Contact contact4, Message message1, Message message2, Message message3, Message message4){
 		Scanner in = new Scanner(System.in);
 		String s = "s";
 		String userInput = "a";
-		Contact contact1 = new Contact();
-		Contact contact2 = new Contact();
-		Contact contact3 = new Contact();
-		Contact contact4 = new Contact();
-		Message contact1M = new Message();
-		Message contact2M = new Message();
-		Message contact3M = new Message();
-		Message contact4M = new Message();
 		if (contactNumber == 1 ){
 			System.out.println("Message from:" + contact1.getFirstName());
-			System.out.println(contact1M.getDay() + " " + contact1M.getTime());
-			contact1M.getMessage();
+			System.out.println(message1.getDay() + " " + message1.getTime());
+			message1.getMessage();
 			System.out.println("Would you like to view the phone number? [y] Yes, [n] No");
 			userInput = in.next();
 			if (userInput == "y"){
@@ -109,8 +101,8 @@ class Notification {
 		}
 		if (contactNumber == 2 ){
 			System.out.println("Message from:" + contact2.getFirstName());
-			System.out.println(contact2M.getDay() + " "+ contact2M.getTime());
-			System.out.println(contact2M.getMessage());
+			System.out.println(message2.getDay() + " "+ message2.getTime());
+			System.out.println(message2.getMessage());
 			System.out.println("Would you like to view the phone number? [y] Yes, [n] No");
 			userInput = in.next();
 			if (userInput == "y"){
@@ -119,8 +111,8 @@ class Notification {
 		}
 		if (contactNumber == 3 ){
 			System.out.println("Message from:" + contact3.getFirstName());
-			System.out.println(contact3M.getDay() + " " +contact3M.getTime());
-			System.out.println(contact3M.getMessage());
+			System.out.println(message3.getDay() + " " +message3.getTime());
+			System.out.println(message3.getMessage());
 			System.out.println("Would you like to view the phone number? [y] Yes, [n] No");
 			userInput = in.next();
 			if (userInput == "y"){
@@ -131,8 +123,8 @@ class Notification {
 		}
 		if (contactNumber == 4){
 			System.out.println("Message from:" + contact4.getFirstName());
-			System.out.println(contact4M.getDay() + " " + contact4M.getTime());
-			System.out.println(contact4M.getMessage());
+			System.out.println(message4.getDay() + " " + message4.getTime());
+			System.out.println(message4.getMessage());
 			System.out.println("Would you like to view the phone number? [y] Yes, [n] No");
 			userInput = in.next();
 			if (userInput == "y"){
@@ -148,10 +140,10 @@ class Notification {
 		Contact contact2 = new Contact();
 		Contact contact3 = new Contact();
 		Contact contact4 = new Contact();
-		Message contact1M = new Message();
-		Message contact2M = new Message();
-		Message contact3M = new Message();
-		Message contact4M = new Message();
+		Message message1 = new Message();
+		Message message2 = new Message();
+		Message message3 = new Message();
+		Message message4 = new Message();
 		if (contactNumber == 1 ){
 			System.out.println(contact1.getNumber());
 			s = contact1.getNumber();
