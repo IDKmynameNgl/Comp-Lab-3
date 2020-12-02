@@ -5,8 +5,6 @@ class Notification {
 	public static void main(String [] args) {
 		Scanner in = new Scanner(System.in); 
 		int i = 0;
-		Contact[] contact = new Contact[4];
-		Message[] message = new Message [4];
 		Contact contact1 = new Contact("Daniel", "Mejia" ,"So, What is your favorite Disney Charecter?", "915-123-4567");
 		Contact contact2 = new Contact("Ali", "Nouri", "Are you going to be eating frozen pizza again tonight?", "915-891-0111");
 		Contact contact3 = new Contact();
@@ -15,16 +13,36 @@ class Notification {
 		Message message2 = new Message("11-20","12:30","PM");
 		Message message3 = new Message();
 		Message message4 = new Message();
-		contact[0] = contact1;
-		contact[1] = contact2;
-		contact[2] = contact3;
-		contact[3] = contact4;
-		message[0] = message1;
-		message[1] = message2;
-		message[2] = message3;
-		message[3] = message4;
-		fillContact(contact1, contact2,  contact3, contact4, message1, message2, message3, message4, contact, message);
-		
+		System.out.println("Creating new contact...");
+		System.out.println("Please enter contacts  First name");
+		contact3.setFirstName(in.next());
+		System.out.println("Please enter contacts Last name");
+		contact3.setLastName(in.next());
+		System.out.println("Please enter the contacts Phone number");
+		contact3.setNumber(in.next());
+		System.out.println("Please enter the date of the message [MM/DD]");
+		message3.setDay(in.next());
+		System.out.println("Please enter the time [XX:XX]");
+		message3.setTime(in.next());
+		System.out.println("Please enter the time of day AM or PM");
+		message3.setIsAm(in.next());
+		System.out.println("What does the message contain?");
+		contact3.setMessage(in.nextLine());
+		System.out.println("Creating new contact...");
+		System.out.println("Please enter contacts  First name");
+		contact4.setFirstName(in.next());
+		System.out.println("Please enter contacts Last name");
+		contact4.setLastName(in.next());
+		System.out.println("Please enter the contacts Phone number");
+		contact4.setNumber(in.next());
+		System.out.println("Please enter the date of the message [MM/DD]");
+		message4.setDay(in.next());
+		System.out.println("Please enter the time [XX:XX]");
+		message4.setTime(in.next());
+		System.out.println("Please enter the time of day AM or PM");
+		message4.setIsAm(in.next());
+		System.out.println("What does the message contain?");
+		contact4.setMessage(in.nextLine());
 
 		int numOfTry = 1;
 		
@@ -139,29 +157,7 @@ class Notification {
 		return s;
 	}
 	
-	public static void fillContact (Contact contact1, Contact contact2, Contact contact3, Contact contact4, Message message1, Message message2, Message message3, Message message4, Contact[] contact, Message[] message){
-		Scanner in = new Scanner (System.in);
-		int i = 0;
-		for (i = 2; i > contact.length; i++){
-		System.out.println("Creating new contact...");
-		System.out.println("Please enter contacts  First name");
-		contact[i].setFirstName(in.next());
-		System.out.println("Please enter contacts Last name");
-		contact[i].setLastName(in.next());
-		System.out.println("Please enter the contacts Phone number");
-		contact[i].setNumber(in.next());
-		for (i = 2; i > message.length; i++){
-		System.out.println("Please enter the date of the message [MM/DD]");
-		message[i].setDay(in.next());
-		System.out.println("Please enter the time [XX:XX]");
-		message[i].setTime(in.next());
-		System.out.println("Please enter the time of day AM or PM");
-		message[i].setIsAm(in.next());
-		System.out.println("What does the message contain?");
-		contact[i].setMessage(in.nextLine());
-		}
-		}
-	}
+
 	
 	
 }//end Notification class
